@@ -17,9 +17,7 @@ MODE=V.MODE
 if MODE=="GPS":
     from GPS2 import Work #IF GPS is on import module
     
-from opcn2_rec import Opcn2
-from opcn3_rec import Opcn3
-from sds_rec import SDS011 as sds
+import SDS011 as sds
 
 
   
@@ -47,10 +45,6 @@ def initFile(date,RPI,FOLDER,LOCATION,SENSORS):
             else:
                 NAMES=NAMES+","+str(sen)#solution to odd error, when python does not think str are str
             #loop through sensors to create columns 
-            if "OPCN3" in sen:
-                columns=columns+",b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,MToF,period,FlowRate,OPC-T,OPC-RH,pm1,pm2.5,pm10,Check"
-            elif "OPCN2" in sen:
-                columns=columns+",b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,ct,flowrate,temp_pressure,period,checksum,pm1,pm2.5,pm10"
             elif "SDS" in sen or "sds" in sen:
                 columns=columns+",sds-pm2.5,sds-pm10,sds-TSP"
      #create the csv
@@ -93,11 +87,7 @@ if __name__ == "__main__":
     #Array for operational sensors class calls
     opsen=[]
     for r in R:
-        if "OPCN2" in r:
-            opsen.append(Opcn2)
-        elif "OPCN3" in r:
-            opsen.append(Opcn3)
-        elif "SDS" in r:
+        if "SDS" in r:
             opsen.append(sds)
     
     #get the processes to run
