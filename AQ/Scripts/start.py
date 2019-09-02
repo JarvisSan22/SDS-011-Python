@@ -17,6 +17,11 @@ MODE=V.MODE
 if MODE=="GPS":
     from GPS2 import Work #IF GPS is on import module
     
+if V.BLINKT=="ON":
+    from blinkt import set_pixel, set_brightness, show, clear
+    
+    
+    
 import SDS011 as sds
 
 
@@ -139,6 +144,20 @@ if __name__ == "__main__":
                 for pro, r,p in zip(Sen,R,P): #loop through OPC
                     newdata=pro.getData(p,r)
                     data=data+","+newdata
+                    if V.BLINKT=="ON":
+                        PM=float(newdata[0])
+                        COLOR=0
+                        COLORVAL={0:[0,255,0],1:[0,0,255],2:[255,0,0]}
+                        for Limit in V.PMVALUE:
+                            if PM>Limit:
+                                COLOR=COLOR+1
+                        clear()
+                        set_pixel(1,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+                        show()                            
+                            
+                       
+                        
+                    
                     #printe all data  and write it to the file
                     
             print(data,file=f)
