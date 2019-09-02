@@ -39,7 +39,9 @@ DHTNAMES=["DHT22_1"]
 DHTPINS=[14] #check the pin
 
 #Light settings 
-LIGHT="OFF" #LEDS option,  
+LIGHT="OFF" #LEDS option,  for a RGB LED Cathod 
+LIGHTPIN=[]
+
 BLINKET="ON"  #BLINkt hat option (Cant fit DHT22 with the BLINKET Hat)
 PMVALUE=[10,20,30]  #Set intevals for light colors 
 
