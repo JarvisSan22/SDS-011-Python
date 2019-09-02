@@ -34,6 +34,14 @@ RUNSEN=["SDS011_1"]  #add your SDS011 name, if you have more then 1 sds attaced,
 RUNPORT=["/dev/ttyUSB0"] #for more SDS011 add a "/dev/ttyUSB#" #=number to this array
 
 #Temp sensors port number, if a DHT11 or 22 is running get the por  
-DHTON="ON"
+DHTON="OFF"
 DHTNAMES=["DHT22_1"]
 DHTPINS=[14] #check the pin
+
+#Light settings 
+LIGHT="OFF" #LEDS option,  
+BLINKET="ON"  #BLINkt hat option (Cant fit DHT22 with the BLINKET Hat)
+PMVALUE=[10,20,30]  #Set intevals for light colors 
+
+
+
