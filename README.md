@@ -24,21 +24,20 @@ add network
 
 
 # GPS Set up 
-GPS Dongle G-mouse, set up video 
+GPS Dongle G-mouse, set up video for setting up the dolge GPS as the RPI3 clock !!!
 https://www.youtube.com/watch?v=Oag9qYuhMGg
+Buy link:
 
-1st  in ""sudo nano /etc/default/gpsd"" set the following
+1st get gps module
+sudo apt-get install gpsd gpsd-clients python-gps chrony
+2nd  in ""sudo nano /etc/default/gpsd"" set the following
  
-
 START_DAEMON=”true”
-
 USBAUTO=”true”
-
 DEVICES=”/dev/ttyACM0″
-
 GPSD_OPTIONS=”-n”
 
-2nd ""sudo nano /etc/chrony/chrony.conf"" Add the following line to the end of the file:
+3rd ""sudo nano /etc/chrony/chrony.conf"" Add the following line to the end of the file:
 refclock SHM 0 offset 0.5 delay 0.2 refid NMEA
 
 3rd Reboot the RPI3 ""sudo reboot""
@@ -70,5 +69,9 @@ if that gives errors ""sudo apt --fix-broken install""
 
 
 # Blinkt set up install
-
+Buy link: https://shop.pimoroni.com/products/blinkt
+1st get the blinkt packages  
 curl https://get.pimoroni.com/blinkt | bash
+
+2nd fit the blinket o
+
