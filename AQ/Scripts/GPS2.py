@@ -39,7 +39,7 @@ def Work():
   gpsp = GpsPoller() # create the thread
   global gpsp
   lat,lon,alt,utctime=main(gpsp)
-  print("Time:" ,utctime,"Lat",lat,"Lon",lon,"Alt",alt)
+#  print("Time:" ,utctime,"Lat",lat,"Lon",lon,"Alt",alt)
   return lat, lon, alt
 
 

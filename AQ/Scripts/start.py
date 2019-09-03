@@ -22,7 +22,7 @@ if V.BLINKT=="ON":
     
     
     
-import SDS011 as sds
+from sds_rec import SDS011 as sds
 
 
   
@@ -50,12 +50,12 @@ def initFile(date,RPI,FOLDER,LOCATION,SENSORS):
             else:
                 NAMES=NAMES+","+str(sen)#solution to odd error, when python does not think str are str
             #loop through sensors to create columns 
-            elif "SDS" in sen or "sds" in sen:
+            if "SDS" in sen or "sds" in sen:
                 columns=columns+",sds-pm2.5,sds-pm10,sds-TSP"
      #create the csv
     csvnames=NAMES.replace(",","-") #replace the commers from the Sensors names to add tio file name
     ofile= FOLDER + LOCATION +"_"+ RPI+'_' +csvnames+"_"+ str(date).replace('-','') + ".csv"
-    print("Opening Output File:")
+#    print("Opening Output File:")
     if(not os.path.isfile(ofile)):
         print("creat new file ",ofile)
         f=open(ofile,'w+')#open file 
@@ -98,6 +98,9 @@ if __name__ == "__main__":
     #get the processes to run
     print("Starting AQ RPI, Mode:", V.MODE)
     print("**************************************************")
+    if V.BLINKT=="ON":
+	print("********************************")
+	print("BLINKT ON")
     print("integration time (seconds)",inter)
     print("**************************************************")
     #processes=[mp.Process(target=c,args=(p,r)) for c,p ,r in zip(opsen,P,R)]
@@ -123,8 +126,8 @@ if __name__ == "__main__":
             datestart = datetime.date.today()
             
             #Create file if not alrady created
-            if MODE=="GPS": or MODE=="TEST" #if GPS  or a TEST add the time in mins to the file name
-                f=initFile(startime.strtime('%Y%m%d-%H%M%S'),RPI,FOLDER,LOCATION,R)
+            if MODE=="GPS" or MODE=="TEST": #if GPS  or a TEST add the time in mins to the file name
+                f=initFile(starttime.strftime('%Y%m%d-%H%M%S'),RPI,FOLDER,LOCATION,R)
             else:  #file name just with date
                 f = initFile(datestart,RPI,FOLDER,LOCATION,R)
             ts = time.time()
@@ -133,6 +136,7 @@ if __name__ == "__main__":
 
             if MODE=="GPS":  #IF GPS is attahced and turned on, get GPS data
               lat,lon,alt= Work()
+              print("Lat:",lat,"Lon",lon)
               data=data+","+str(lat)+","+str(lon)+","+str(alt)
             if V.DHTON=="ON": #Get DHT data, for all DHT attached
                 for DH, PIN in zip(V.DHTNAMES,V.DHTPINS):
@@ -145,15 +149,22 @@ if __name__ == "__main__":
                     newdata=pro.getData(p,r)
                     data=data+","+newdata
                     if V.BLINKT=="ON":
-                        PM=float(newdata[0])
+                        PM=float(newdata.split(",")[0])
                         COLOR=0
-                        COLORVAL={0:[0,255,0],1:[0,0,255],2:[255,0,0]}
+                        COLRVAL={0:[0,100,0],1:[0,100,50],2:[100,50,0],3:[100]}
                         for Limit in V.PMVALUE:
                             if PM>Limit:
                                 COLOR=COLOR+1
                         clear()
+                        set_pixel(0,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
                         set_pixel(1,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-                        show()                            
+			set_pixel(2,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+			set_pixel(3,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+			set_pixel(4,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+			set_pixel(5,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+			set_pixel(6,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+			set_pixel(7,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+			show()                            
                             
                        
                         
