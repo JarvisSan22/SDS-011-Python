@@ -62,14 +62,17 @@ class SDS011:
             
     def process_frame (self,d):
     #Get and Print the wanted data, and put in into a usable data fromet
-        
-        r = struct.unpack('<HHxxBBB', d[2:])
-        pm25 = r[0]/10.0
-        pm10 = r[1]/10.0
-        TSP= r[2]/10.0
-       # print(r)
-        #print(d)
-        checksum = sum(ord(v) for v in d[2:8])%256
+        try: 
+			r = struct.unpack('<HHxxBBB', d[2:])
+			pm25 = r[0]/10.0
+			pm10 = r[1]/10.0
+			TSP= r[2]/10.0
+		   # print(r)
+			#print(d)
+			checksum = sum(ord(v) for v in d[2:8])%256
+		except:
+			r="ERROR"
+			checksum="ERROR"
        # print(datetime.datetime.now())
         #add a varable for if the data is good or bad
         if (checksum==r[2] and r[3]==0xab):

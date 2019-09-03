@@ -149,6 +149,12 @@ if __name__ == "__main__":
                     newdata=pro.getData(p,r)
                     data=data+","+newdata
                     if V.BLINKT=="ON":
+			clear()
+			show()
+			set_pixel(0,10,10,10)
+			set_pixel(1,10,10,10)
+			time.sleep(1)
+			show()
                         PM=float(newdata.split(",")[0])
                         COLOR=0
                         COLRVAL={0:[0,100,0],1:[0,100,50],2:[100,50,0],3:[100]}
@@ -164,7 +170,9 @@ if __name__ == "__main__":
 			set_pixel(5,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
 			set_pixel(6,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
 			set_pixel(7,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			show()                            
+			show()     
+			
+		                     
                             
                        
                         
