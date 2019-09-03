@@ -6,7 +6,7 @@ Variables for the sensors operation
 """
 #All the needed varaibles
 #RPI3 Name
-RPINAME="AQRPI8"
+RPINAME="RPINAME"
 #Desired operation mode
 
 #folder locations 
@@ -14,7 +14,7 @@ FOLDER = '/home/pi/SDS-011-Python-master/AQ/Data/' #for raw data
 FOLDERCODE='/home/pi/SDS-011-Python/AQ-master/Scripts/' #For the scpirs locaton 
 #Operation location, if using with GPS use area name, add inital lat and lon
 #Makse sure there are no spaces in Location name or / or ,  for this goes into ther file name
-LOC=['Liverpool','Lat','lon'] #Add test name into this too, say aersol and calbration ...
+LOC=['LocationName','Lat','lon'] #Add test name into this too, say aersol and calbration ...
 
 #Data record period(in seconds)
 integration=10
