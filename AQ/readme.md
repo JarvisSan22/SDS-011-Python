@@ -1,7 +1,7 @@
 
 # AQ set up
 
-1. set varaibles
+**1. set varaibles**
 
 ```
 nano SDS-011-Python-master/AQ/Scripts/varaibles.py
@@ -33,7 +33,7 @@ BLINKT="ON"  #BLINkt hat option (Cant fit DHT22 with the BLINKET Hat)
 PMVALUE=[10,20,30]  #Set intevals for light colors defult colors (Green,blue,organe red) +
 ```
 
-2. Time to run
+**2. Time to run**
 
 
 ```
@@ -42,7 +42,7 @@ sudo python SDS-011-Python-master/AQ/Scripts/start.py
 ```
 ![Run](https://github.com/JarvisSan22/SDS-011-Python/blob/master/Runexample.png)
 
-3. Run on start up
+**3. Run on start up**
 
 In terminal
 ```
@@ -58,4 +58,4 @@ Then in terminal, reboot to check it works
 sudo reboot
 ```
 
-Contrab works well with the BLINKT as you can see its working 
+Running from start up works well with the BLINKT as you can see its working from the colors 
