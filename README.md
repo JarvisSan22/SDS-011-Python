@@ -4,6 +4,12 @@ Contacts: ee18dj@leeds.ac.uk or Jarvissan21@gmail.com
 
 Python repository for the SDS011 on a RPI3. Functions for use with a GPS, DHT22 and Blinkt LED lights. 
 
+
+
+
+![SDS-0112](https://github.com/JarvisSan22/SDS-011-Python/blob/master/SDSsetup.jpg)
+
+
 # Repository details 
 1. **AQ** {Logging scipts, go into this folder for run details}
    - **Data** {Folder to store data files }
@@ -121,3 +127,4 @@ curl https://get.pimoroni.com/blinkt | bash
 ```
 2nd fit the blinket into the RPI3 
 
+![SDS-011](https://github.com/JarvisSan22/SDS-011-Python/blob/master/SDS011-setup.jpg)
