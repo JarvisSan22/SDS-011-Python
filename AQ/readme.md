@@ -27,7 +27,7 @@ DHTPINS=[14] #check the pin
 ```
 Addional varaibles for BLINKT if connected 
 
-Set BLINK="ON" and check the PMVALUE to set light color limits
+Set BLINKT="ON" and check the PMVALUE to set light color limits
 ```
 BLINKT="ON"  #BLINkt hat option (Cant fit DHT22 with the BLINKET Hat)
 PMVALUE=[10,20,30]  #Set intevals for light colors defult colors (Green,blue,organe red) +
