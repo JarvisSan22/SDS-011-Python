@@ -35,11 +35,18 @@ sudo apt-get upgrade
 ```
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
-add network
+add  your network network
+```
+network={
+   ssid="{your interent name}"
+   psk="{your internet password}"
+}
+```
 
 **Download this repository**
+```
 git clone https://github.com/JarvisSan22/SDS-011-Python
-
+```
 
 
 # GPS Set up 
@@ -112,5 +119,5 @@ Buy link: https://shop.pimoroni.com/products/blinkt
 ```
 curl https://get.pimoroni.com/blinkt | bash
 ```
-2nd fit the blinket o
+2nd fit the blinket into the RPI3 
 
