@@ -1,9 +1,28 @@
-# SDS-011-Python-
-Python repository for the SDS011 on a RPI3, with function to use a GPS and DHT temp/Humid sensors. 
+# SDS-011-Python Repoisitory
+Author: Danien Jarvis
+Contacts: ee18dj@leeds.ac.uk or Jarvissan21@gmail.com
+
+Python repository for the SDS011 on a RPI3. Functions for use with a GPS, DHT22 and Blinkt LED lights. 
+
+# Repository details 
+1. **AQ** {Logging scipts, go into this folder for run details}
+   - **Data** {Folder to store data files }
+   - **Scripts** 
+     - 2 **DHT** {DHT repository}
+     - 2 **DHT.py** {DHT 11 and 22 script}
+     - 2 **GPS2.py** {GPS scipts}
+     - 2 **sds_rec.py** {SDS011 get data sripts}
+     - 2 **start.py**  {Start recording and logg data script}
+     - 2 **status.py** {RPI3 status scripts, checks if running, and updates time}
+     - 2 **variables.py** {RPI3 and sensors varaible script}
+1. **AQ-Plot** {Plotter scripts, go into this folder for details on how to run}
+   - **AQDataplot.py** {Main plotter scripts}
+   - **AQMapfunctions.py** {Map plotting functions}
+   - **AQfunctions.py** {Data file reading functions}
+   - **Genlivehtml.py** {HTML interfacte functions}
 
 
-
-
+  
 
 
 # RPI3 set up 
@@ -12,14 +31,14 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-
-""WIfi set up"" 
+**WIfi set up** 
 ```
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 add network
 
-
+**Download this repository**
+git clone https://github.com/JarvisSan22/SDS-011-Python
 
 
 
