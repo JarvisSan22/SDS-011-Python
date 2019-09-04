@@ -7,10 +7,10 @@ Python repository for the SDS011 on a RPI3, with function to use a GPS and DHT t
 
 
 # RPI3 set up 
-
+---
 sudo apt-get update
 sudo apt-get upgrade
-
+---
 
 
 ""WIfi set up"" 
