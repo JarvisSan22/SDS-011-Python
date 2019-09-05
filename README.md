@@ -8,6 +8,14 @@ Python repository for the SDS011 on a RPI3. Functions for use with a GPS, DHT22 
 ![SDS-011](https://github.com/JarvisSan22/SDS-011-Python/blob/master/SDS011-setup.jpg)
 
 
+# Kit Links 
+- [SDS011](https://www.amazon.co.uk/gp/product/B07D7BL33R/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B07D7BL33R&linkCode=as2&tag=jarvissan-21&linkId=40bb211f585f6fb48dd5feecb261bd3f)
+- [RPI3](https://www.amazon.co.uk/gp/product/B01CI5879A/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B01CI5879A&linkCode=as2&tag=jarvissan-21&linkId=d64cc755f2dcf6ff27d37a7fc09b8ac5) 
+- [GPS](https://www.amazon.co.uk/gp/product/B015E2XSSO/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B015E2XSSO&linkCode=as2&tag=jarvissan-21&linkId=8563986ebd9d60f3488a35d2cb5a34f4) 
+- [DHT22](https://www.amazon.co.uk/gp/product/B072391SJV?ie=UTF8) 
+- [BLINKT](https://www.amazon.co.uk/gp/product/B01J7Y332Q/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=B01J7Y332Q&linkCode=as2&tag=jarvissan-21&linkId=dbda11585051ff253bc34c06913a4a40) 
+- [Battery Pack](https://www.amazon.co.uk/gp/product/B07QTJDGJ1?ie=UTF8)
+
 
 # Repository details 
 1. **AQ** {Logging scipts, go into this folder for run details}
@@ -56,11 +64,8 @@ git clone https://github.com/JarvisSan22/SDS-011-Python
 
 # GPS Set up 
 GPS Dongle G-mouse, set up video for setting up the dolge GPS as the RPI3 clock !!!
-
 https://www.youtube.com/watch?v=Oag9qYuhMGg
 
-Buy link:
-https://www.amazon.co.uk/Diymall-G-mouse-Glonass-Raspberry-Aviation/dp/B015E2XSSO/ref=sr_1_8?keywords=GPS+usb&qid=1567675023&s=gateway&sr=8-8
 
 1st get gps module
 ```
@@ -122,7 +127,7 @@ if  TeamViewer ID is blank ""
 
 
 # Blinkt set up install
-Buy link: https://shop.pimoroni.com/products/blinkt
+
 1st get the blinkt packages  
 ```
 curl https://get.pimoroni.com/blinkt | bash
