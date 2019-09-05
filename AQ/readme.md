@@ -59,3 +59,19 @@ sudo reboot
 ```
 
 Running from start up works well with the BLINKT as you can see its working from the colors 
+
+
+**Multiple SDS011 set up example**
+
+To set up Multiple SDS011 on one RPI3, multipe sensors names and ports need to be added to RUNSEN and RUNPORT arrays in varaibles.py
+
+```
+nano SDS-011-Python-master/AQ/Scripts/varaibles.py
+```
+
+![MulsenVariables](https://github.com/JarvisSan22/SDS-011-Python/blob/master/2SDS011Varibles.png)
+
+Add the new SDS011 name, and the SDS011 port name (/dev/tttyUSB#N #N=0,1,2,3...)
+
+
+![MulSDS011](https://github.com/JarvisSan22/SDS-011-Python/blob/master/2SDS011Varibles.png)
