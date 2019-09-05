@@ -74,4 +74,4 @@ nano SDS-011-Python-master/AQ/Scripts/varaibles.py
 Add the new SDS011 name, and the SDS011 port name (/dev/tttyUSB#N #N=0,1,2,3...)
 
 
-![MulSDS011](https://github.com/JarvisSan22/SDS-011-Python/blob/master/2SDS011Varibles.png)
+![MulSDS011](https://github.com/JarvisSan22/SDS-011-Python/blob/master/2SDS011Example.jpg)
