@@ -56,8 +56,11 @@ git clone https://github.com/JarvisSan22/SDS-011-Python
 
 # GPS Set up 
 GPS Dongle G-mouse, set up video for setting up the dolge GPS as the RPI3 clock !!!
+
 https://www.youtube.com/watch?v=Oag9qYuhMGg
+
 Buy link:
+https://www.amazon.co.uk/Diymall-G-mouse-Glonass-Raspberry-Aviation/dp/B015E2XSSO/ref=sr_1_8?keywords=GPS+usb&qid=1567675023&s=gateway&sr=8-8
 
 1st get gps module
 ```
