@@ -148,29 +148,35 @@ if __name__ == "__main__":
                 for pro, r,p in zip(Sen,R,P): #loop through OPC
                     newdata=pro.getData(p,r)
                     data=data+","+newdata
+                    if "spi error" in newdata.lower():
+                        pro=sen(p,r) #initiate the sensors
+			#restate senors in SPI error occres 
                     if V.BLINKT=="ON":
+			
 			clear()
-			show()
 			set_pixel(0,10,10,10)
 			set_pixel(1,10,10,10)
-			time.sleep(1)
+	
 			show()
+			time.sleep(0.5)
                         PM=float(newdata.split(",")[0])
-                        COLOR=0
-                        COLRVAL={0:[0,100,0],1:[0,100,50],2:[100,50,0],3:[100]}
-                        for Limit in V.PMVALUE:
-                            if PM>Limit:
-                                COLOR=COLOR+1
-                        clear()
-                        set_pixel(0,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-                        set_pixel(1,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			set_pixel(2,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			set_pixel(3,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			set_pixel(4,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			set_pixel(5,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			set_pixel(6,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			set_pixel(7,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
-			show()     
+		
+			if "nan" not in str(PM).lower(): #if not nan set color 
+                        	COLOR=0
+                        	COLRVAL={0:[0,100,0],1:[0,100,50],2:[100,50,0],3:[100,0,0]}
+                        	for Limit in V.PMVALUE:
+                            		if PM>Limit:
+                                		COLOR=COLOR+1
+                        	clear()
+                       		set_pixel(0,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+                        	set_pixel(1,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				set_pixel(2,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				set_pixel(3,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				set_pixel(4,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				set_pixel(5,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				set_pixel(6,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				set_pixel(7,COLRVAL[COLOR][0],COLRVAL[COLOR][1],COLRVAL[COLOR][2])
+				show()     
 			
 		                     
                             

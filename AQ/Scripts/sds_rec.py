@@ -62,7 +62,9 @@ class SDS011:
             
     def process_frame (self,d):
     #Get and Print the wanted data, and put in into a usable data fromet
-        try: 
+ #       try:
+	for i in range(0,10):
+		try: 
 			r = struct.unpack('<HHxxBBB', d[2:])
 			pm25 = r[0]/10.0
 			pm10 = r[1]/10.0
@@ -71,8 +73,11 @@ class SDS011:
 			#print(d)
 			checksum = sum(ord(v) for v in d[2:8])%256
 		except:
-			r="ERROR"
-			checksum="ERROR"
+			#print("SPI Error")
+			if i==9:
+				print("SPI Error")
+				r="ERROR"
+				checksum="spi error"
        # print(datetime.datetime.now())
         #add a varable for if the data is good or bad
         if (checksum==r[2] and r[3]==0xab):
@@ -80,6 +85,7 @@ class SDS011:
           data = {"pm2":pm25,"pm10":pm10,"TSP?":TSP,"Check":com}
         else:
           com=999 #bad data
+	
           data ={"pm2":"nan","pm10":"nan" ,"TSP?":"nan","Check":com}
         return data
         
@@ -88,19 +94,18 @@ class SDS011:
     # process frame to get the data
         byte = 0
         while byte != "\xaa":
-            #try:
+            try:
                 byte = ser.read(size=1)
                 d = ser.read(size=10)
-           #     print(d,len(d))
+                #print(d,len(d))
                 if d[0] == "\xc0":
                     data = self.process_frame(byte + d)
             #        print("Data reciveds")
                     return data
-        #    except:
-             #   print("Error")
-            #    data ={"pm2":"nan","pm10":"nan" 
-            #    ,"TSP?":"nan","Check":"nan"}
-               # return data
+            except:
+                print("Read Error")
+                data ={"pm2":"nan","pm10":"nan","TSP?":"nan","Check":"nan"}
+                return data
                 
             
     def getData(self,OPCPORT,OPCNAME):
@@ -135,7 +140,7 @@ class SDS011:
           ts=time.time()
           tnow = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
           if data is not None:
-              print(OPCNAME,"Time:",tnow,"PM2.5:",str(data['pm2']),"PM10:",str(data['pm10']),"TSP:",str(data['TSP?']))
+              print(OPCNAME,"Time:",tnow,"PM2.5:",str(data['pm2']),"PM10:",str(data['pm10']))
               data=str(data['pm2'])+","+str(data['pm10'])+","+str(data['TSP?'])+","+str(data['Check'])
           
           else:
