@@ -411,21 +411,22 @@ def ploter(Datas,Cols,Dates,filename,infos,ave):
 #Code to run the functions
 Sens=["SDS011_1"]
 #RPIs=[,"GRIMM"] #RPI3 naes 
-vals=["pm2.5","GPSWALK"]#,"STATICMAP"] #colums
-ave="1T"
+vals=["pm2.5","pm10"]#"GPSWALK"]#,"STATICMAP"] #colums
+ave="10T"
 #Get date for today and yesterday
 today=datetime.today().strftime("%Y-%m-%d")
 yesterday=datetime.today() - timedelta(days=1)
 yesterday=yesterday.strftime("%Y-%m-%d")
-#yesterday="2019-05-25"
-Dates=["2019-05-24"]
-#Dates=["2019-04"]
-filename="RPI3PlotScriptstest"
+
+Dates=[today,yesterday]
+filename="test"
 #Generate PLOT
 
-Folder="D://MRES!!!!!!! 勝とう//Project//Code//Maincode//Dataset//Portsmouth//GPS//"
-Data,infos=GetDataset(Folder,Sens,ave)
-ploter(Data,vals,Dates,filename,infos,ave)
+
+
+Folder="/home/pi/SDS-011-Python-master/AQ/Data/" #data folder
+Data,infos=GetDataset(Folder,Sens,ave) #getsensors data "Gets all for the selected sensor"
+ploter(Data,vals,Dates,filename,infos,ave) #plot data
 
 
 
