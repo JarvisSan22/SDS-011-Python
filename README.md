@@ -3,7 +3,8 @@ Author: Danien Jarvis
 Contacts: ee18dj@leeds.ac.uk or Jarvissan21@gmail.com
 
 Python repository for the SDS011 on a RPI3. Functions for use with a GPS, DHT22 and Blinkt LED lights. 
--[Set up Video](https://www.youtube.com/watch?v=fvaiyqwaWeM)
+
+[Set up Video](https://www.youtube.com/watch?v=fvaiyqwaWeM)
 
 ![SDS-011](https://github.com/JarvisSan22/SDS-011-Python/blob/master/SDS011-setup.jpg)
 
