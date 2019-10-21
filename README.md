@@ -1,4 +1,4 @@
-# SDS-011-Python Repoisitory (Now with data ploting server)
+# SDS-011-Python Repoisitory (Now with data ploting webserver)
 Author: Danien Jarvis
 Contacts: ee18dj@leeds.ac.uk or Jarvissan21@gmail.com
 
