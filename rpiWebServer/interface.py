@@ -4,7 +4,6 @@ import os
 import sys
 import pandas as pd
 import glob
-import codecs
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 import io
