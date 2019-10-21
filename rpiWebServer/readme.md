@@ -3,11 +3,16 @@ rpiwebserver for live viewing of reading, and ploy of todays data. Currently wor
 
 
 ## set up
-1st install flask and the other needed package psutil (used to check the SDS011 log script is running) 
+1st install the needed packages  
 
 ```
- pip install flask
- pip install psutil 
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install xsel xclip libxml2-dev libxslt-dev python-lxml python-h5py python-numexpr python-dateutil python-six python-tz python-bs4 python-html5lib python-openpyxl python-tables python-xlrd python-xlwt cython python-sqlalchemy python-xlsxwriter python-jinja2 python-boto python-gflags python-googleapi python-httplib2 python-zmq libspatialindex-dev
+sudo pip install bottleneck rtree
+sudo apt-get install python-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas
+pip install flask
+pip install codecs
 ```
 
 2nd RUN interface.py 
