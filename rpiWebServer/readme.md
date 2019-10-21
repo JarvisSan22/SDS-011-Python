@@ -3,7 +3,7 @@ rpiwebserver for live viewing of reading, and ploy of todays data. Currently wor
 
 
 ## set up
-1st install the needed packages  
+1st install the needed packages, this get matplot, pandas working on the rpi3 and give you the needed software for the webserver flask
 
 ```
 sudo apt-get update
