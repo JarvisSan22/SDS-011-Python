@@ -1,6 +1,8 @@
 # SDS-011-Python Repoisitory (Now with data ploting webserver)
 Author: Danien Jarvis
-Contacts: ee18dj@leeds.ac.uk or Jarvissan21@gmail.com
+Contacts:  jarvissan21@gmail.com
+
+Happy to recive feedback, and to implement contributions  
 
 Python repository for the SDS011 on a RPI3. Functions for use with a GPS, DHT22 and Blinkt LED lights. 
 **NEW** Data plotting web server in rpiWebServer, click into rpiWebServer folder for setup
@@ -138,3 +140,9 @@ curl https://get.pimoroni.com/blinkt | bash
 
 
 ![SDS-0112](https://github.com/JarvisSan22/SDS-011-Python/blob/master/SDSsetup.jpg)
+
+
+# New 21/10/2019 RpiWebServer
+
+
+![RpiWeb](https://github.com/JarvisSan22/SDS-011-Python/blob/master/Screenshot_20191020-170102_Chrome.jpg)
