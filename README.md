@@ -1,8 +1,9 @@
-# SDS-011-Python Repoisitory
+# SDS-011-Python Repoisitory (Now with data ploting server)
 Author: Danien Jarvis
 Contacts: ee18dj@leeds.ac.uk or Jarvissan21@gmail.com
 
 Python repository for the SDS011 on a RPI3. Functions for use with a GPS, DHT22 and Blinkt LED lights. 
+**NEW** Data plotting web server in rpiWebServer, click into rpiWebServer folder for setup
 
 [Set up Video](https://www.youtube.com/watch?v=fvaiyqwaWeM)
 
