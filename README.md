@@ -139,8 +139,13 @@ curl https://get.pimoroni.com/blinkt | bash
 2nd fit the blinket into the RPI3 
 
 
-![SDS-0112](https://github.com/JarvisSan22/SDS-011-Python/blob/master/SDSsetup.jpg)
+# DHT22 Set up 
 
+Intall the package
+
+```
+ 'sudo python3  SDS-011-Python-master/AQ/Scripts/DHT/setup.py install'
+```
 
 # New 21/10/2019 RpiWebServer
 
