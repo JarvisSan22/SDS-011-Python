@@ -10,11 +10,11 @@ RPINAME="RPINAME"
 #Desired operation mode
 
 #folder locations 
-FOLDER = '/home/pi/SDS-011-Python-master/AQ/Data/' #for raw data
-FOLDERCODE='/home/pi/SDS-011-Python/AQ-master/Scripts/' #For the scpirs locaton 
+FOLDER = '/home/pi/SDS-011-Python/AQ/Data/' #for raw data
+FOLDERCODE='/home/pi/SDS-011-Python/AQ/Scripts/' #For the scpirs locaton 
 #Operation location, if using with GPS use area name, add inital lat and lon
 #Makse sure there are no spaces in Location name or / or ,  for this goes into ther file name
-LOC=['LocationName','Lat','lon'] #Add test name into this too, say aersol and calbration ...
+LOC=['loncan','lat','lon'] #Add test name into this too, say aersol and calbration ...
 
 #Data record period(in seconds)
 integration=10
@@ -23,7 +23,7 @@ integration=10
 URL = 'https://github.com/JarvisSan22/SDS-011-Python'
 
 #LoG: logs data, new file every day #GPS add lat, long, alt to data if GPS is added #TEST create a new data file ever time scrip is run (GPS does the same as well)
-MODE= "GPS" #"LOG"   #"GPS"  
+MODE= "LOG"   #"GPS"  
 
 #Note if GPS is on it takes up "/dev/ttyACM0" port
 ##Desired sensors to run on RPI3
@@ -42,7 +42,7 @@ DHTPINS=[14] #check the pin
 LIGHT="OFF" #LEDS option,  for a RGB LED Cathod 
 LIGHTPIN=[]
 
-BLINKT="ON"  #BLINkt hat option (Cant fit DHT22 with the BLINKET Hat)
+BLINKT="OFF"  #BLINkt hat option (Cant fit DHT22 with the BLINKET Hat)
 PMVALUE=[10,20,30]  #Set intevals for light colors 
 
 

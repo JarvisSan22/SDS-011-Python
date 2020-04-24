@@ -113,7 +113,7 @@ class SDS011:
           serial_opts = {
                 "port": OPCPORT,
                 "baudrate": 9600,
-                "parity": serial.PARITY_NONE,
+              #  "parity": serial.PARITY_NONE,
                 "bytesize": serial.EIGHTBITS,
                 "stopbits": serial.STOPBITS_ONE,
                  "xonxoff": False,
@@ -146,7 +146,7 @@ class SDS011:
           else:
               print(OPCNAME," Data error")
               #return nan for errors so the code does not get stuck
-              data="nan,nan,nana,nana" 
+              data="nan,nan,nan,nan" 
           return data
     def __init__(self,OPCPORT,OPCNAME):
           print(OPCNAME)

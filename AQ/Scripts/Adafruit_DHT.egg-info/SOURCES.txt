@@ -1,0 +1,4 @@
+Adafruit_DHT.egg-info/PKG-INFO
+Adafruit_DHT.egg-info/SOURCES.txt
+Adafruit_DHT.egg-info/dependency_links.txt
+Adafruit_DHT.egg-info/top_level.txt
